@@ -1,0 +1,13 @@
+.mat-grid-list--size {
+  width: 600px;
+}
+
+.mat-form-field--size {
+  width: 100%;
+}
+
+::ng-deep .mat-grid-tile--flex {
+  .mat-grid-tile-content {
+    display: initial !important;
+  }
+}
