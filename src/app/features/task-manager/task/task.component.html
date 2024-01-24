@@ -1,7 +1,12 @@
 <form [formGroup]="formGroup">
   <mat-card>
     <mat-card-header>
-      <mat-card-title>Task</mat-card-title>
+      <mat-card-title class="task-title">
+        <span>Task</span>
+        <button *ngIf="formGroup.disabled" (click)="edit()" mat-icon-button>
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-card-title>
       <mat-card-subtitle>
         &nbsp;
       </mat-card-subtitle>
@@ -37,8 +42,9 @@
     </mat-card-content>
     <mat-card-footer>
       <mat-card-actions class="mat-card-actions--padding">
-        <button mat-raised-button (click)="edit()" *ngIf="formGroup.disabled">Edit</button> &nbsp;
-        <button mat-raised-button color="primary" [mat-dialog-close]="formGroup.value" [disabled]="formGroup.invalid" *ngIf="formGroup.enabled">Save</button> &nbsp;
+        <button mat-raised-button class="mr-2" (click)="edit()" *ngIf="formGroup.disabled">Edit</button>
+        <button mat-raised-button class="mr-2" (click)="complete()">Complete</button>
+        <button mat-raised-button class="mr-2" color="primary" [mat-dialog-close]="formGroup.value" [disabled]="formGroup.invalid" *ngIf="formGroup.enabled">Save</button>
         <button mat-raised-button color="warn" (click)="formGroup.reset()">Reset</button>
       </mat-card-actions>
     </mat-card-footer>

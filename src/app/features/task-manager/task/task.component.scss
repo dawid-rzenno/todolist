@@ -6,8 +6,20 @@
   width: 100%;
 }
 
-::ng-deep .mat-grid-tile--flex {
-  .mat-grid-tile-content {
-    display: initial !important;
+:host ::ng-deep {
+  .mat-grid-tile--flex {
+    .mat-grid-tile-content {
+      display: initial !important;
+    }
   }
+
+  div.mat-mdc-card-header-text {
+    flex-grow: 1;
+  }
+}
+
+.task-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

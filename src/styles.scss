@@ -3,6 +3,8 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif }
 
+@import "assets/bootstrap.min.css";
+
 .mat-card-actions--padding {
   padding: 1rem !important;
   display: flex;

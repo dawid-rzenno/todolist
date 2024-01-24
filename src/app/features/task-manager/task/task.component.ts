@@ -16,7 +16,8 @@ export class TaskComponent {
     author: this.fb.nonNullable.control( '', Validators.required),
     color: this.fb.nonNullable.control('', Validators.required),
     creationDate: this.fb.nonNullable.control(new Date(), Validators.required),
-    lastUpdateDate: this.fb.nonNullable.control(new Date(), Validators.required),
+    updateDate: this.fb.nonNullable.control(new Date(), Validators.required),
+    completionDate: this.fb.nonNullable.control(new Date(), Validators.required),
   })
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: { task: Task | undefined }, private fb: FormBuilder) {
@@ -28,5 +29,9 @@ export class TaskComponent {
 
   edit(): void {
     this.formGroup.enable();
+  }
+
+  complete(): void {
+    this.formGroup.get('completionDate')?.setValue(new Date())
   }
 }

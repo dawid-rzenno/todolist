@@ -7,7 +7,8 @@ export interface Task {
   author: string;
   color: string;
   creationDate: Date;
-  lastUpdateDate: Date;
+  updateDate: Date;
+  completionDate: Date;
 }
 
 export interface TaskForm {
@@ -17,5 +18,6 @@ export interface TaskForm {
   author: FormControl<string>;
   color: FormControl<string>;
   creationDate: FormControl<Date>;
-  lastUpdateDate: FormControl<Date>;
+  updateDate: FormControl<Date>;
+  completionDate: FormControl<Date>;
 }

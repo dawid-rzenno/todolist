@@ -1,11 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TaskManagerComponent } from "./features/task-manager/task-manager.component";
+import {HomeComponent} from "./home/home.component";
 
 const routes: Routes = [
   {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
     path: 'task-manager',
     component: TaskManagerComponent
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
   }
 ];
 
